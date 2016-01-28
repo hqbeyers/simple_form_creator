@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @question.label %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @question.type %>
+</p>
+
+<p>
+  <strong>Options:</strong>
+  <%= @question.options %>
+</p>
+
+<p>
+  <strong>Default:</strong>
+  <%= @question.default %>
+</p>
+
+<p>
+  <strong>Form:</strong>
+  <%= @question.form %>
+</p>
+
+<%= link_to 'Edit', edit_form_question_path(:form_id => @question.form_id, :id => @question.id) %> |
+<%= link_to 'Back', form_questions_path %>

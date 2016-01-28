@@ -1,0 +1,33 @@
+<h1>Listing questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Type</th>
+      <th>Options</th>
+      <th>Default</th>
+      <th>Form</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.label %></td>
+        <td><%= question.type %></td>
+        <td><%= question.options %></td>
+        <td><%= question.default %></td>
+        <td><%= question.form %></td>
+        <td><%= link_to 'Show', form_questions_path(:form_id => question.form_id, :id => question.id) %></td>
+        <td><%= link_to 'Edit', edit_form_question_path(:form_id => question.form_id, :id => question.id) %></td>
+        <td><%= link_to 'Destroy', form_question_path(:id => question.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_form_question_path %>
